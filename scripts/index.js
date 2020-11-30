@@ -139,7 +139,10 @@ const updateTodo = (listTodo, todoData, key) => {
     updateDataTodo(key, todoData);
 }
 
-const initTodo = (selector, key = "todo") => {
+const initTodo = (selector) => {
+
+    const key = prompt("Сообщи Свой ключ");
+
     const todoData = initDataTodo(key);
 
     const wrapper = document.querySelector(selector);
@@ -193,6 +196,8 @@ const initTodo = (selector, key = "todo") => {
         todoData.splice(index, 1);
         updateTodo(listTodo, todoData, key);
     });
+
+    document.title = key;
 
     updateTodo(listTodo, todoData, key);
 
